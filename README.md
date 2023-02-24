@@ -15,9 +15,9 @@ This project is a user authentication and dashboard system built using React. It
 
 To get started with this project, clone the repository and install the required dependencies.
 
-git clone https://github.com/sawankhanchi/React-User-Authentication-and-Dashboard.git
+git clone https://github.com/sawankhanchi/React_User_Authentication_and_Dashboard.git
 
-cd React-User-Authentication-and-Dashboard
+cd React_User_Authentication_and_Dashboard
 
 npm install
 
