@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
+import { Redirect } from "react-router-dom";
+import { useSelector } from "react-redux"
 interface Errors {
   username?: string;
   firstName?: string;
@@ -17,6 +19,12 @@ function Register(): JSX.Element {
   const [errors, setErrors] = useState<Errors>({});
 
   const history = useHistory();
+
+  const store = useSelector((reduxState: { auth: { isLoggedIn: boolean } }) => reduxState.auth)
+
+  if (store.isLoggedIn) {
+    return <Redirect to="/dashboard" />
+  }
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();

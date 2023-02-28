@@ -11,7 +11,7 @@ interface dashboardProps {
   heading?: string
 }
 
-function Dashboard({ heading }:dashboardProps): JSX.Element {
+function Dashboard({ heading }: dashboardProps): JSX.Element {
   const [showDropdown, setShowDropdown] = useState<boolean>(false);
 
   const dispatch: ThunkDispatch<any, any, AnyAction> = useDispatch();
@@ -29,6 +29,7 @@ function Dashboard({ heading }:dashboardProps): JSX.Element {
   if (!store.isLoggedIn && !window.localStorage.getItem('Login')) {
     return <Redirect to="/login" />
   }
+
 
   const toggleDropdown = () => {
     setShowDropdown((prevState: boolean) => !prevState);
